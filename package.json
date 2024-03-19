@@ -4,6 +4,10 @@
 	"version":"0.1.0",
 	"description": "Paquete con las funcionalidades basicas de todos los proyectos VR.",
 	"author": "isostopy",
+	"dependencies":
+	{
+		"com.meta.xr.sdk.core": "^62.0.0"
+	},
 	"samples":
 	[
 		{
