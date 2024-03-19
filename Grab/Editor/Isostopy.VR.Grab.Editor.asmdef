@@ -1,0 +1,18 @@
+{
+    "name": "Isostopy.VR.Grab.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3d096c4efe718b744b321b3c91aa17ba"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

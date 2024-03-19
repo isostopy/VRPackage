@@ -1,0 +1,20 @@
+{
+	"name": "com.isostopy.vr",
+	"displayName": "VR Package",
+	"version":"0.1.0",
+	"description": "Paquete con las funcionalidades basicas de todos los proyectos VR.",
+	"author": "isostopy",
+	"samples":
+	[
+		{
+			"displayName":"Grab",
+			"description":"Muestra del sistema que permite agarrar objetos.",
+			"path":"_Samples/Grab"
+		},
+		{
+			"displayName":"Raycaster",
+			"description":"Muestra del sistema de raycasting que permite apuntar y hacer click sobre botones u otros objetos en VR.",
+			"path":"_Samples/VRRaycaster"
+		}
+	]
+}
