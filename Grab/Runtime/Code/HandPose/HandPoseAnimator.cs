@@ -6,6 +6,8 @@ namespace Isostopy.VR.Grab
 	/// <summary>
 	/// Componente que permite poner poses en una mano. <para></para>
 	/// Tiene que estar en la mano del jugador. </summary>
+
+	[AddComponentMenu("Isostopy/VR/Grab/Hand Pose Animator")]
 	public class HandPoseAnimator : MonoBehaviour
 	{
 		/// <summary> Hueso base del modelo de la mano. </summary>

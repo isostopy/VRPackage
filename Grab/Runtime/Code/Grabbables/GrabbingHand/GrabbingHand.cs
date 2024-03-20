@@ -5,6 +5,8 @@ namespace Isostopy.VR.Grab
 {
 	/// <summary> Componente que permite a una mano agarrar objetos -> <see cref="Grabbable"/>. </summary>
 	/* Quiza en el futuro haya que hacer una version base de este componente que no dependa de las cosas de oculus para poder usarlo en otros dispositivos. */
+
+	[AddComponentMenu("Isostopy/VR/Grab/Grabbing Hand")]
 	public class GrabbingHand : MonoBehaviour
 	{
 		/// Si esta mano es derecha o izquierda.

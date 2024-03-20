@@ -1,7 +1,7 @@
 {
 	"name": "com.isostopy.vr",
 	"displayName": "VR Package",
-	"version":"0.1.0",
+	"version":"0.2.0",
 	"description": "Paquete con las funcionalidades basicas de todos los proyectos VR.",
 	"author": "isostopy",
 	"dependencies":
@@ -10,6 +10,11 @@
 	},
 	"samples":
 	[
+		{
+			"displayName":"Hand Pose Studio",
+			"description":"Escena en la que se puede guardar la pose de las manos con hand tracking para luego usarla como la pose de las manos al agarrar objetos con los mandos.",
+			"path":"_Samples/HandPoseStudio"
+		},
 		{
 			"displayName":"Grab",
 			"description":"Muestra del sistema que permite agarrar objetos.",

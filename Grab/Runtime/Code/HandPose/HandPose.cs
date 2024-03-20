@@ -6,6 +6,8 @@ namespace Isostopy.VR.Grab
 	/// <summary>
 	/// Componente que define la pose de todos los huesos de una mano utilizando una lista de transforms. <para></para>
 	/// Tiene que estar en el objeto agarrable que se va a sujetar con una pose. </summary>
+	
+	[AddComponentMenu("Isostopy/VR/Grab/Hand Pose")]
 	public class HandPose : MonoBehaviour
 	{
 		///Modelo 3D de la mano. Solo se muestra en el editor para ver como va a quedar.

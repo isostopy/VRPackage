@@ -4,6 +4,8 @@ using UnityEngine.Events;
 namespace Isostopy.VR.Grab
 {
 	/// <summary> Grabbable que se hace hijo de la mano que lo agarra. </summary>
+
+	[AddComponentMenu("Isostopy/VR/Grab/Simple Grabbable Object")]
 	public class SimpleGrabbableObject : Grabbable
 	{
 		/// <summary> Referencia al Rigidbody de este objeto. </summary>
@@ -57,12 +59,14 @@ namespace Isostopy.VR.Grab
 		public override void Release()
 		{
 			// Volvemos al kinematico y padre anterior.
-			if (rigid != null)
-				rigid.isKinematic = wasKinematic;
 			transform.parent = prevParent;
-			// Le damos la velocidad a la que lo estabamos moviendo.
-			var speed = (transform.position - lastFramePosition) / Time.deltaTime;
-			rigid.velocity = speed * releaseSpeedModifier;
+			if (rigid != null)
+			{
+				rigid.isKinematic = wasKinematic;
+				// Le damos la velocidad a la que lo estabamos moviendo.
+				var speed = (transform.position - lastFramePosition) / Time.deltaTime;
+				rigid.velocity = speed * releaseSpeedModifier;
+			}
 
 			base.Release();
 		}

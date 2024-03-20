@@ -6,6 +6,8 @@ namespace Isostopy.VR.Grab
 	/// Objeto que al ser agarrado pone una pose en la mano. <para></para>
 	/// Para usarlo la mano tiene que tener el componente HandPoseAnimator -> <see cref="HandPoseAnimator"/>. <br/>
 	/// Y este objeto necesita dos HandPose, una de la mano derecha y otra de la izquierda -> <see cref="HandPose"/> </summary>
+
+	[AddComponentMenu("Isostopy/VR/Grab/Pose Grabbable Object")]
 	public class PoseGrabbableObject : SimpleGrabbableObject
 	{
 		/// Pose en que tenemos que poner la mano cuando se agarra este objeto.
