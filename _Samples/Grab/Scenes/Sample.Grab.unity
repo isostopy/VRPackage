@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1916f04edc4ddf24a9d36af22e17ebca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseSpeedModifier: 1
+  releaseSpeedModifier: 0.75
   handPoseL: {fileID: 844918609}
   handPoseR: {fileID: 457058577}
 --- !u!136 &250933249
@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1916f04edc4ddf24a9d36af22e17ebca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseSpeedModifier: 1
+  releaseSpeedModifier: 0.75
   handPoseL: {fileID: 1754095573}
   handPoseR: {fileID: 1728395261}
 --- !u!1 &1684305603
@@ -4591,7 +4591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1916f04edc4ddf24a9d36af22e17ebca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseSpeedModifier: 1
+  releaseSpeedModifier: 0.75
   handPoseL: {fileID: 1192702396}
   handPoseR: {fileID: 647171518}
 --- !u!1 &1858088216
@@ -4847,7 +4847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa22542030270d44b9ee7f3fdb846cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseSpeedModifier: 1
+  releaseSpeedModifier: 0.75
 --- !u!1001 &5512119090525816063
 PrefabInstance:
   m_ObjectHideFlags: 0

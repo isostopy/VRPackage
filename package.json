@@ -1,7 +1,7 @@
 {
 	"name": "com.isostopy.vr",
 	"displayName": "VR Package",
-	"version":"0.2.0",
+	"version":"0.2.1",
 	"description": "Paquete con las funcionalidades basicas de todos los proyectos VR.",
 	"author": "isostopy",
 	"dependencies":
