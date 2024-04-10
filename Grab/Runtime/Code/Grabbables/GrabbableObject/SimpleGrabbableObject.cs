@@ -68,7 +68,11 @@ namespace Isostopy.VR.Grab
 			if (rigid != null)
 			{
 				rigid.isKinematic = wasKinematic;
-				rigid.velocity = currentSpeed * releaseSpeedModifier;	// Le damos la velocidad a la que lo estabamos moviendo.
+
+				// Le damos la velocidad a la que lo estabamos moviendo.
+				//rigid.velocity = currentSpeed * releaseSpeedModifier;
+				var speed = OVRInput.GetLocalControllerVelocity(grabbingHand.Controller);
+				rigid.velocity = speed * releaseSpeedModifier;
 			}
 
 			base.Release();
