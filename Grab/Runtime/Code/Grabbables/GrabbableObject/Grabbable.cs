@@ -21,7 +21,6 @@ namespace Isostopy.VR.Grab
 		/// <summary> Agarra este objeto por la GrabbingHand indicada. </summary>
 		public virtual void Grab(GrabbingHand grabbingHand)
 		{
-
 			if (this.grabbingHand != null)
 			{
 				this.grabbingHand.ObjectRealeased(this);
@@ -35,6 +34,10 @@ namespace Isostopy.VR.Grab
 		/// <summary> Suelta este objeto. </summary>
 		public virtual void Release()
 		{
+			if (grabbingHand != null)
+			{
+				grabbingHand.ObjectRealeased(this);
+			}
 			grabbingHand = null;
 
 			isGrabbed = false;

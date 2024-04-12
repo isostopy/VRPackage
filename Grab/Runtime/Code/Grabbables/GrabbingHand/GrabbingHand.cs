@@ -125,7 +125,7 @@ namespace Isostopy.VR.Grab
 		}
 
 		/// <summary> Soltar el objeto que tenemos agarrado. </summary>
-		void Release()
+		public void Release()
 		{
 			if (grabbedObject == null)
 				return;

@@ -65,7 +65,7 @@ namespace Isostopy.VR.Grab
 		{
 			// Volvemos al kinematico y padre anterior.
 			transform.parent = prevParent;
-			if (rigid != null)
+			if (rigid != null && grabbingHand != null)
 			{
 				rigid.isKinematic = wasKinematic;
 
