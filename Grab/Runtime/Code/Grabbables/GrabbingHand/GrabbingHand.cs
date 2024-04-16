@@ -94,7 +94,7 @@ namespace Isostopy.VR.Grab
 		private void OnTriggerEnter(Collider other)
 		{
 			Grabbable enteringObject = other.GetComponent<Grabbable>();
-			if (enteringObject != null && hoveringObjects.Contains(enteringObject) == false)
+			if (enteringObject != null && enteringObject.enabled == true && hoveringObjects.Contains(enteringObject) == false)
 				hoveringObjects.Add(enteringObject);
 		}
 
