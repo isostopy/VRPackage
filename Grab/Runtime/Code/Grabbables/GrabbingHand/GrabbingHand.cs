@@ -181,6 +181,17 @@ namespace Isostopy.VR.Grab
 		/// <summary> Mando de Oculus que esta controlando esta mano. </summary>
 		public OVRInput.Controller Controller => controller;
 
+		/// <summary> Velocidad a la que se esta moviendo esta mano. </summary>
+		public virtual Vector3 velocity
+		{
+			get
+			{
+				var vel = OVRInput.GetLocalControllerVelocity(controller);
+				vel = OVRManager.instance.transform.TransformDirection(vel);
+				return vel;
+			}
+		}
+
 		#endregion
 	}
 }

@@ -16,9 +16,6 @@ namespace Isostopy.VR.Grab
 		/// <summary> Referencia al padre que tenia este objeto antes de agararrlo. </summary>
 		protected Transform prevParent = null;
 
-		/// Velocidad a la que se mueve este objeto mientras esta agarrado.
-		protected Vector3 lastFramePosition = Vector3.zero;
-		protected Vector3 currentSpeed = Vector3.zero;
 		/// Modificador de la velocidad a la que lanzamos este objeto.
 		[Space][SerializeField] float releaseSpeedModifier = 1f;
 
@@ -30,15 +27,6 @@ namespace Isostopy.VR.Grab
 			rigid = GetComponent<Rigidbody>();
 		}
 
-
-		protected virtual void FixedUpdate()
-		{
-			if (isGrabbed)
-			{
-				currentSpeed = (transform.position - lastFramePosition) / Time.fixedDeltaTime;
-				lastFramePosition = transform.position;
-			}
-		}
 
 		// ----------------------------------------------------------
 
@@ -56,9 +44,6 @@ namespace Isostopy.VR.Grab
 			// Hacemos este objeto kinematico e hijo de la mano que nos agarra.
 			if (rigid != null) rigid.isKinematic = true;
 			transform.parent = grabbingHand.transform;
-
-			currentSpeed = Vector3.zero;
-			lastFramePosition = transform.position;
 		}
 
 		public override void Release()
@@ -69,10 +54,11 @@ namespace Isostopy.VR.Grab
 			{
 				rigid.isKinematic = wasKinematic;
 
-				// Le damos la velocidad a la que lo estabamos moviendo.
-				//rigid.velocity = currentSpeed * releaseSpeedModifier;
-				var speed = OVRInput.GetLocalControllerVelocity(grabbingHand.Controller);
-				rigid.velocity = speed * releaseSpeedModifier;
+				// Le damos la velocidad a la que lo estamos moviendo.
+				if (rigid.isKinematic == false)
+				{
+					rigid.velocity = grabbingHand.velocity * releaseSpeedModifier;
+				}
 			}
 
 			base.Release();
