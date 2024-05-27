@@ -30,11 +30,14 @@ namespace Isostopy.VR.Raycaster
 		public float maxDistance = 10;
 
 		/// <summary> Boton que debe pulsarse para hacer click. </summary>
-		[Space] public OVRInput.Axis1D button = OVRInput.Axis1D.PrimaryIndexTrigger;
+		[Space] public OVRInput.Button button = OVRInput.Button.One;
+		/// <summary> Trigger que debe pulsarse para hacer click. </summary>
+		public OVRInput.Axis1D trigger = OVRInput.Axis1D.PrimaryIndexTrigger;
 		/// <summary> Cuanto tiene que aprentar el usuario el boton para considerar que esta haciendo clic. </summary>
 		[Range(0, 1)] public float inputToClick = 0.5f;
 		/// Si estaba o no haciendo clic el frame anterior.
 		bool wasPressing = false;
+
 
 		/// <summary> Objeto que se coloca donde el rayo choca con algo. </summary>
 		[Space] public Transform pointerIndicator = null;
@@ -90,24 +93,24 @@ namespace Isostopy.VR.Raycaster
 				ChangeHoveringItem(pointedItem);
 
 			// Calcula si el gatillo se ha pulsado o soltado este frame.
-			float input = OVRInput.Get(button);
+			float input = OVRInput.Get(trigger);
 			bool isPressing = input >= inputToClick;
 			bool pressedThisFrame = isPressing == true && wasPressing == false;
 			bool releasedThisFrame = isPressing == false && wasPressing == true;
 			wasPressing = isPressing;
 
 			// Seleccionar el objeto si se pulsa un boton.
-			if (pressedThisFrame || Input.GetKeyDown(KeyCode.Space))
+			if (pressedThisFrame || OVRInput.GetDown(button) || Input.GetKeyDown(KeyCode.Space))
 			{
 				selectedItem = hoverningItem;
 			}
 			// Mantener pulsado.
-			if (isPressing || Input.GetKey(KeyCode.Space))
+			if (isPressing || OVRInput.Get(button) || Input.GetKey(KeyCode.Space))
 			{
 				PointerDown();
 			}
 			// Deseleccionarlo si se suelta.
-			else if (releasedThisFrame || Input.GetKeyUp(KeyCode.Space))
+			else if (releasedThisFrame || OVRInput.GetUp(button) || Input.GetKeyUp(KeyCode.Space))
 			{
 				Click();
 				PointerUp();
